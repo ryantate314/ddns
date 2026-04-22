@@ -11,13 +11,8 @@ EnvironmentFile=/etc/ddns-client/ddns-client.env
 ExecStart=/usr/local/bin/ddns-update.sh
 
 # Hardening
+# Keep only directives that work inside unprivileged LXCs (no mount namespacing).
+# The main security boundary is running as the non-root `ddns` user above.
 NoNewPrivileges=yes
-ProtectSystem=strict
-ProtectHome=yes
-PrivateTmp=yes
-ReadWritePaths=/var/lib/ddns-client
-ProtectKernelTunables=yes
-ProtectKernelModules=yes
-ProtectControlGroups=yes
 RestrictSUIDSGID=yes
 LockPersonality=yes
