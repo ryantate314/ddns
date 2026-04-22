@@ -1,6 +1,6 @@
 resource "aws_resourcegroups_group" "ddns" {
   name        = "ddns"
-  description = "All resources tagged Project=ddns (the DDNS provider stack)."
+  description = "Dynamic DNS for Home Lab Wireguard"
 
   resource_query {
     type = "TAG_FILTERS_1_0"
