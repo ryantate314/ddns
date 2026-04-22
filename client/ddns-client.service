@@ -1,0 +1,23 @@
+[Unit]
+Description=DDNS client — update Route 53 via Lambda when public IP changes
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ddns
+Group=ddns
+EnvironmentFile=/etc/ddns-client/ddns-client.env
+ExecStart=/usr/local/bin/ddns-update.sh
+
+# Hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ReadWritePaths=/var/lib/ddns-client
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes

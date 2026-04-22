@@ -1,0 +1,11 @@
+[Unit]
+Description=DDNS client — run every 5 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=5min
+Persistent=true
+Unit=ddns-client.service
+
+[Install]
+WantedBy=timers.target

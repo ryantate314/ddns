@@ -1,0 +1,2 @@
+# boto3 is provided by the AWS Lambda Python 3.12 runtime.
+# This file exists so future deps can be added; currently empty.

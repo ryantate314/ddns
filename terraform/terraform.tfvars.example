@@ -1,0 +1,5 @@
+zone_name    = "example.com"
+record_name  = "home.example.com"
+notify_email = "you@example.com"
+# ttl        = 60
+# region     = "us-east-1"
